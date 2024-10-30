@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Оператор SWITCH</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>	
+<body>
+	<h2 style="text-align:center">Введіть ваш вік для перевірки</h2>
+	
+	<script> 
+		"use strict";
+		
+		let age = parseInt(prompt("Введіть ваш вік"));
+		let b = age % 10;
+		let s; 
+
+		switch (b) { 
+			case 1:
+				s = "рік"; 
+				break;
+			case 2:
+			case 3:
+			case 4:
+				s = "роки";
+				break; 
+			default: 
+				s = "років";
+		}
+		
+		// Виправлення для віків від 11 до 19, коли закінчення завжди "років"
+		if (age > 10 && age < 20) {
+			s = "років";
+		}
+
+		document.write("Вам - ", age, " ", s);
+	</script>
+
+
+<ul>
+    <li>
+        <a class="home" href="../index.html">Повернутися на головну сторінку</a>
+    </li>
+</ul>
+
+</body>
+</html>
