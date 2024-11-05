@@ -1,49 +1,39 @@
-
-<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Оператор SWITCH</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>Класифікація за віком</title>
+	</head>	
+	<body>
+		<script>
+			"use strict";
+			let age = parseInt(prompt("Введіть ваш вік")); 
+			let classification;
 
-    <link rel="stylesheet" href="../css/style.css">
-</head>	
-<body>
-	<h2 style="text-align:center">Введіть ваш вік для перевірки</h2>
-	
-	<script> 
-		"use strict";
-		
-		let age = parseInt(prompt("Введіть ваш вік"));
-		let b = age % 10;
-		let s; 
-
-		switch (b) { 
-			case 1:
-				s = "рік"; 
-				break;
-			case 2:
-			case 3:
-			case 4:
-				s = "роки";
-				break; 
-			default: 
-				s = "років";
-		}
-		
-		// Виправлення для віків від 11 до 19, коли закінчення завжди "років"
-		if (age > 10 && age < 20) {
-			s = "років";
-		}
-
-		document.write("Вам - ", age, " ", s);
-	</script>
-
+			switch (true) {
+				case (age < 0):
+					classification = "недійсний вік";
+					break;
+				case (age < 12):
+					classification = "дитина"; 
+					break;
+				case (age < 18):
+					classification = "підліток"; 
+					break;
+				case (age < 65):
+					classification = "дорослий"; 
+					break;
+				default:
+					classification = "пенсіонер"; 
+			}
+			
+			document.write("Ви - ", classification);
+		</script>
 
 <ul>
     <li>
         <a class="home" href="../index.html">Повернутися на головну сторінку</a>
     </li>
 </ul>
-
-</body>
+		
+	</body>
 </html>
